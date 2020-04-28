@@ -10,10 +10,10 @@ module.exports = {
   },
   output: {
     path: Path.resolve(__dirname, './dist'),
-    filename: '[name].min.js'
-    // library: 'Debugger',
-    // libraryTarget: 'umd',
-    // umdNamedDefine: true
+    filename: '[name].min.js',
+    library: 'HDDT',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
