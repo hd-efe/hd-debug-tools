@@ -1,1 +1,1 @@
-new Debugger.default()
+new HDDT()
