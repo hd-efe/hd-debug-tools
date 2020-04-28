@@ -1,6 +1,6 @@
 {
   "name": "hd-debug-tools",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "混沌大学h5 debug 工具",
   "main": "./dist/debugger.min.js",
   "scripts": {
