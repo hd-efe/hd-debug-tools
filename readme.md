@@ -12,8 +12,6 @@
 
 ## Usage
 
-Download the latest release.(`dist/debugger.min.js`)
-
 Or, install vim npm:
 ```shell
 npm install hd-debug-tools
@@ -21,9 +19,25 @@ npm install hd-debug-tools
 
 import to your project:
 
-```html
-<script src="../dist/debugger.min.js"></script>
+```vue
 <script>
-new Debugger.default()
+import { HDDT } from 'hd-debug-tools
+
+created() {
+    new HDDT({
+        // ...config
+    })
+}
 </script>
 ```
+
+## Configure
+
+|key|含义|类型|默认值|
+|----|:--:|--|--|
+|default_load_script|是否在页面最开始加载script|Boolean|true|
+|enable_body_entry|是否开启默认body的entry|Boolean|true|
+|enable_url_entry|是否开启url entry|Boolean|true|
+|url_entry_key|url入口 key|String|vconsole|
+|url_entry_value|url入口 value|String|show|
+|entry|自定义entry|String|null|

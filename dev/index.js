@@ -1,1 +1,1 @@
-new HDDT()
+new HDDT.HDDT()
