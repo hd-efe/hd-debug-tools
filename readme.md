@@ -2,11 +2,14 @@
 
 > 混沌大学h5 debugger工具。
 
+Based on [VConsole](https://github.com/Tencent/vConsole)
+
 ## Features
 - view console logs
 - view network requests
 - view document elements
 - view cookies/LocalStorage/SessionStorage
+- view performance info
 - Execute JS command manually
 - Custom plugin
 
@@ -41,3 +44,8 @@ created() {
 |url_entry_key|url入口 key|String|vconsole|
 |url_entry_value|url入口 value|String|show|
 |entry|自定义entry|String|null|
+
+
+## Changelog
+
+[changelog.md](./changelog.md)
