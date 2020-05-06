@@ -5,6 +5,7 @@
  */
 import { query } from '../lib/tools'
 import init_ls_plugin from '../plugins/localstorage'
+import init_performance_plugin from '../plugins/performance'
 
 class Core {
     store = []
@@ -106,7 +107,9 @@ class Core {
     }
     load_vc_plugins() {
         const ls_plugin = init_ls_plugin()
+        const performance_plugin = init_performance_plugin()
         this.vc.addPlugin(ls_plugin)
+        this.vc.addPlugin(performance_plugin)
 
     }
     show_vc() {

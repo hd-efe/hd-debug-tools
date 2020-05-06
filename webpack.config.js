@@ -34,7 +34,7 @@ module.exports = {
   },
   plugins: [
     new Webpack.BannerPlugin([
-        'Debugger v' + pkg.version,
+        'hd-debug-tools v' + pkg.version,
         '',
         'Hundun is pleased to support the open source community by making Debugger available.',
         'Copyright (C) 2017 THL A29 Limited, a Hundun company. All rights reserved.',

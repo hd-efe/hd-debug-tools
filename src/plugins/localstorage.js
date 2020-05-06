@@ -23,6 +23,8 @@ const css = `
     flex: 1;
 }
 `
+import tpl from './plugin.row.html'
+import tplEngine from '../lib/tpl_engine'
 const injectCss = () => {
     let style = document.getElementsByTagName('style')
     if (style && style[0]) {
@@ -33,22 +35,15 @@ const injectCss = () => {
     }
 }
 const init_ls_plugin = () => {
-    var ls_plugin = new VConsole.VConsolePlugin('ls_plugin', 'ls自定义插件');
+    var ls_plugin = new VConsole.VConsolePlugin('ls_plugin', 'LocalStorage');
     ls_plugin.on('init', () => {
         injectCss()
     })
     ls_plugin.on('renderTab', (cb) => {
-        let html = '', i = 0
         let storage = window.localStorage
         let keys = Object.keys(storage)
-        for (; i < keys.length; i++) {
-            html += '<div class="ls-pligin-row">'
-            html += `<div class="ls-plugin-row-key">${keys[i]}</div>`
-            html += `<div class="ls-plugin-row-value">${storage[keys[i]]}</div>`
-            html += `<div class="ls-plugin-row-oper">clear</div>`
-            html += '</div>'
-        }
-        cb(html)
+        let a = tplEngine(tpl, {storage, keys})
+        cb(a)
     })
     return ls_plugin
 }
