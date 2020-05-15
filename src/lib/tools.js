@@ -9,3 +9,7 @@ export const query = (prop) => {
     }
     return GETURL[prop] || '';
 }
+
+export const geta = () => {
+    console.log(1)
+}
