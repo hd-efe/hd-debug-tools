@@ -12,7 +12,7 @@ Based on [VConsole](https://github.com/Tencent/vConsole)
 - view performance info
 - Execute JS command manually
 - Custom plugin
-
+- error report
 ## Usage
 
 Or, install vim npm:
@@ -24,12 +24,16 @@ import to your project:
 
 ```vue
 <script>
-import { HDDT } from 'hd-debug-tools
+import { HDDT, init_sentry } from 'hd-debug-tools
 
 created() {
     new HDDT({
         // ...config
     })
+    // 异常上报
+    init_sentry({
+      tag: "xxx" // page_index
+    });
 }
 </script>
 ```
