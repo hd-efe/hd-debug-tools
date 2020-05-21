@@ -1,3 +1,8 @@
+## [2020-05-21] 1.0.9
+
+- add common function(get_param,get_params,fill_url_params,openUrl, getEnv)
+- release 1.0.9
+
 ## [2020-05-15] 1.0.8
 
 - new features: error report

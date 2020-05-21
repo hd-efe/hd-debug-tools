@@ -1,4 +1,14 @@
-const is_xcx = get_search_params('xcx_open_id')
+
+// 获取url参数 第一个
+export const get_param = (key) => {
+    return new URLSearchParams(window.location.search).get(key)
+}
+// 获取url参数 全部
+export const get_params = (key) => {
+    return new URLSearchParams(window.location.search).getAll(key)
+}
+
+const is_xcx = get_param('xcx_open_id')
 
 export const getEnv = () => {
     let environment;
@@ -13,6 +23,21 @@ export const getEnv = () => {
         environment = 'other';
     }
     return environment;
+}
+
+// 混沌h5 链接 拼接参数
+export const fill_url_params = (url) => {
+    let search = window.location.search || '?'
+    if (/^(https|http)\:\/\/(ttools|tools)\.hundun\.cn.*/.test(url)) {
+        let match_query = url.match(/\?.*/g)
+        if (match_query) {
+            return url + '&' + search.slice(1)
+        } else {
+            return url + search
+        }
+    } else {
+        return url
+    }
 }
 
 export const openUrl = (url) => {
@@ -48,25 +73,3 @@ export const openUrl = (url) => {
     }
 };
 
-// 混沌h5 链接 拼接参数
-export const fill_url_params = (url) => {
-    let search = window.location.search || '?'
-    if (/^(https|http)\:\/\/(ttools|tools)\.hundun\.cn.*/.test(url)) {
-        let match_query = url.match(/\?.*/g)
-        if (match_query) {
-            return url + '&' + search.slice(1)
-        } else {
-            return url + search
-        }
-    } else {
-        return url
-    }
-}
-// 获取url参数 第一个
-export const get_param = (key) => {
-    return new URLSearchParams(window.location.search).get(key)
-}
-// 获取url参数 全部
-export const get_params = (key) => {
-    return new URLSearchParams(window.location.search).getAll(key)
-}
